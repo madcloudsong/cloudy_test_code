@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<title>固定的头部和底部</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="mobilebone.css">
+		<link rel="stylesheet" href="my.css">
+		<script src="mobilebone.js"></script>
+	</head>
+	<body>
+		<div class="header" >
+			<a data-rel="back" href="javascript:">返回</a>
+			<h1 title="固定的头部和底部">固定的头部和底部</h1>
+		</div>
+		<div id="pageHome" class="page out">
+			<div class="content">
+				<ul>
+					<li><a href="#page1">页面1</a></li>
+					<li><a href="#page2">页面2</a></li>
+					<li><a href="#page3">页面3</a></li>
+					<li><a href="another.html" data-reload="true" data-title="another">another</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="page1" class="page out">
+			<div class="content">
+				<a href="#pageHome" data-rel="back">&laquo;返回1</a>
+			</div>
+		</div>
+		<div id="page2" class="page out" data-title="page">
+			<div class="content">
+				<a href="#pageHome" data-rel="back">&laquo;返回2</a>
+			</div>
+		</div>
+		<div id="page3" class="page out">
+			<div class="content">
+				<a href="#pageHome" data-rel="back">&laquo;返回3</a>
+			</div>
+		</div>
+	</body>
+</html>
