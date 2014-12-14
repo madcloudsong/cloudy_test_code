@@ -1,2 +1,5 @@
 print("hello lua")
-print(1)
+cond = false;
+a = "true"
+b = "false"
+print(cond and a or b)
