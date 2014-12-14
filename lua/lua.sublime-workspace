@@ -1,0 +1,194 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "print(\"hello lua\").lua",
+			"settings":
+			{
+				"buffer_size": 18,
+				"line_ending": "Unix",
+				"name": "print(\"hello lua\")"
+			}
+		}
+	],
+	"build_system": "Packages/User/lua.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/madcloud/Documents/git/cloudy_test_code/lua/test.lua",
+		"/Users/madcloud/Documents/git/cloudy_test_code/lua/hello.lua",
+		"/Users/madcloud/Library/Application Support/Sublime Text 2/Packages/User/lua.sublime-build",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/HTTPDispatch.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/HTTPDispatchFactory!1.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/HTTPHandleBase.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/HTTPLoader.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/HTTPPacketBase.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/HTTPPacketFactory.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/HTTPSession.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/IHTTPDispatchFactory.cs",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/others/lbdz_client/HTTPNetwork/Game/Network/NetQueue!1.cs",
+		"/Users/madcloud/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/madcloud/Documents/projects/dotagua/trunk/client/Assets/Scripts/Module/Componet/CGridView.cs",
+		"/Users/madcloud/Downloads/WWWHelper.cs",
+		"/Users/madcloud/Downloads/advanced/init.bat"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"倚天屠龙记"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "print(\"hello lua\").lua",
+					"settings":
+					{
+						"buffer_size": 18,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18,
+								18
+							]
+						],
+						"settings":
+						{
+							"auto_name": "print(\"hello lua\")",
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 159.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
