@@ -7,4 +7,3 @@ print(cond and a or b)
 
 print("go on sublime git")
 
-
