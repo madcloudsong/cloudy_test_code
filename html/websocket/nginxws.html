@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>WS nginx</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #chat{
+                width: 300px;
+                height: 200px;
+            }
+            #msg{
+                width: 230px;
+                height: 40px;
+            }
+            #send,#send2{
+                width: 70px;
+                height: 40px;
+                text-decoration: none;
+                background-color: blue;
+                color: white;
+                padding: 8px 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Chat current: <span id="name"></span></div>
+        <div>
+            <div>
+                <textarea id="chat"></textarea>
+            </div>
+            <div>
+                <input id="msg" type="text"/>
+                <a id="send" href="javascript:;" >Send</a>
+                <a id="send2" href="javascript:;" >SendWS</a>
+            </div>
+        </div>
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+
+            $(function () {
+                var pubUrl = 'http://t.itsong.net/pub';
+                var channel = 1;
+                var addChat = function (msg) {
+                    $("#chat").append(msg + "\n");
+                    $("#chat").scrollTop($("#chat")[0].scrollHeight);/*让滚动条自动到下面*/
+                };
+                var ws = new WebSocket("ws://t.itsong.net/ws/"+channel);
+                ws.onopen = function () {
+                    addChat("Connect success");
+                    console.log("connected");
+                };
+                ws.onmessage = function (e) {
+                    var ret = JSON.parse(e.data);
+                    addChat(ret.text);
+                    console.log("message:" + e.data);
+                };
+                ws.onerror = function () {
+                    addChat("Connect error");
+                    console.log("error");
+                };
+               
+                var sendChat = function (msg) {
+                    var data = msg;
+                    ws.send(data);
+                };
+                $("#send").click(function () {
+                    var msg = $("#msg").val();
+                    $("#msg").val('');
+                    $.post(pubUrl + "?id=" + channel, msg, function (data) {
+                        console.log('pub ret: ' + JSON.stringify(data));
+                    });
+                });
+                $("#send2").click(function () {
+                    var msg = $("#msg").val();
+                    sendChat(msg);
+                    $("#msg").val('');
+                });
+
+            });
+
+        </script>
+    </body>
+</html>

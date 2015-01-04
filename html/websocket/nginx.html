@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>nginx push</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #chat{
+                width: 300px;
+                height: 200px;
+            }
+            #msg{
+                width: 230px;
+                height: 40px;
+            }
+            #send{
+                width: 70px;
+                height: 40px;
+                text-decoration: none;
+                background-color: blue;
+                color: white;
+                padding: 8px 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Chat current: <span id="name"></span></div>
+        <div>
+            <div>
+                <textarea id="chat"></textarea>
+            </div>
+            <div>
+                <input id="msg" type="text"/>
+                <a id="send" href="javascript:;" >Send</a>
+            </div>
+        </div>
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var pubUrl = 'http://t.itsong.net/pub';
+                var subUrl = 'http://t.itsong.net/lp';
+                var channel = 1;
+                var addChat = function (msg) {
+                    $("#chat").append(msg + "\n");
+                    $("#chat").scrollTop($("#chat")[0].scrollHeight);/*让滚动条自动到下面*/
+                };
+                var longpoll = function () {
+                    $.get(subUrl + "/" + channel, {}, function (data) {
+                        console.log("sub ret: " + data);
+                        if (data !== undefined) {
+                            data = JSON.parse(data);
+                            addChat(data.text);
+                        }
+                        longpoll();
+                    });
+                };
+                longpoll();
+                $('#send').click(function () {
+                    var msg = $("#msg").val();
+                    $("#msg").val('');
+                    $.post(pubUrl + "?id=" + channel, msg, function (data) {
+                        console.log('pub ret: ' + JSON.stringify(data));
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
