@@ -3,3 +3,9 @@
 /java/hellojava/nbproject/private/
 /java/hellojava/build/
 /java/hellojava/nbproject/
+/csharp/hello/hello/bin
+obj
+/csharp/hello/hello/bin/Debug/hello.pdb
+/csharp/hello/hello/bin/Debug/hello.vshost.exe
+/csharp/hello/hello/bin/Debug/hello.vshost.exe.manifest
+/csharp/hello/hello/bin/Debug/hello.exe
