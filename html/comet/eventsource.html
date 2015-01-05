@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>event source</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #chat{
+                width: 300px;
+                height: 200px;
+            }
+            #msg{
+                width: 230px;
+                height: 40px;
+            }
+            #send{
+                width: 70px;
+                height: 40px;
+                text-decoration: none;
+                background-color: blue;
+                color: white;
+                padding: 8px 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Chat current: <span id="name"></span></div>
+        <div>
+            <div>
+                <textarea id="chat"></textarea>
+            </div>
+            <div>
+                <input id="msg" type="text"/>
+                <a id="send" href="javascript:;" >Send</a>
+            </div>
+        </div>
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var url = 'http://localhost/php/websocket/eventsource.php';
+                var channel = 1;
+                var addChat = function (msg) {
+                    $("#chat").append(msg + "\n");
+                    $("#chat").scrollTop($("#chat")[0].scrollHeight);/*让滚动条自动到下面*/
+                };
+                //创建一个EventSource对象，并绑定上message事件（接收到消息时触发）
+                var es = new EventSource(url);
+                es.onmessage = function (e) {
+                    addChat(e.data);
+                    //把数据输出到控制台
+                    console.log(e.data);
+                };
+                es.onopen = function (e) {
+                    console.log("open");
+                };
+                es.onerror = function (e) {
+                    console.log("error");
+                };
+                es.addEventListener('testt', function (e) {
+                    alert('test');
+                    console.log(e.data);
+                });
+                $('#send').click(function () {
+
+                });
+            });
+        </script>
+    </body>
+</html>
