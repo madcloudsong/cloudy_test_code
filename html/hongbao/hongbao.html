@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html,body{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+            .bg{
+                background-image: url('./img/BG.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                width: 100%;
+                height: 100%;
+            }
+            @-webkit-keyframes godown{
+                from { top: -100px; }
+                30% { top: 100px;}
+                60% { top: 300px;}
+                to { top: 500px;}
+            }
+            @keyframes godown {
+                from { top: -100px; }
+                30% { top: 100px;}
+                60% { top: 300px;}
+                to { top: 500px;}
+            }
+            .drop{
+                -webkit-animation: 5s 0s godown linear 1 forwards normal;
+                animation: 5s 0s godown linear 1 forwards normal;
+            }
+            .pause{
+                -webkit-animation-play-state:paused;
+            }
+            .hb{
+                width: 100px;
+                height: 80px;
+                position: absolute;
+                top: -100px;
+                left: 10px;
+                background-image: url('./img/HB-Y.png');
+                background-size: 50px 40px;
+                background-repeat: no-repeat;
+            }    
+            .hb-broken{
+                background-image: url('./img/HB-L.png');
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="hb drop"></div>
+            <div class="hb drop"  style="left: 100px;top: -100px"></div>
+            <div class="hb drop" style="left: 210px;top: -200px"></div>
+            <div class="hb drop" style="left: 240px;top: -300px"></div>
+            <div class="hb drop" style="left: 290px;top: -200px"></div>
+        </div>
+        <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            //平台、设备和操作系统  
+            var system = {
+                win: false,
+                mac: false,
+                xll: false
+            };
+            //检测平台  
+            var p = navigator.platform;
+            system.win = p.indexOf("Win") == 0;
+            system.mac = p.indexOf("Mac") == 0;
+            system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+            //跳转语句  
+            var event_tap = 'tap';
+            if (system.win || system.mac || system.xll) {//转向后台登陆页面  
+                event_tap = "click";
+            }
+            $(function () {
+                $(".hb").on(event_tap, function () {
+                    $(this).addClass('hb-broken');
+                    $(this).addClass('pause');
+                    var that = $(this);
+                    setTimeout(function () {
+                        that.hide();
+                    }, 500);
+                });
+            });
+        </script>
+    </body>
+</html>
