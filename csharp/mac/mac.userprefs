@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="mac/basic/Value.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Downloads/linbindouzhe/client_single/Assets/Scripts/Manager/GAME_SETTING.cs">
     <Files>
       <File FileName="mac/Main.cs" Line="1" Column="1" />
-      <File FileName="mac/basic/Value.cs" Line="30" Column="31" />
+      <File FileName="mac/basic/Value.cs" Line="1" Column="1" />
+      <File FileName="../../../../../Downloads/linbindouzhe/client_single/Assets/Scripts/Manager/MainApplication.cs" Line="20" Column="51" />
+      <File FileName="../../../../../Downloads/linbindouzhe/client_single/Assets/Scripts/Manager/GAME_SETTING.cs" Line="21" Column="71" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

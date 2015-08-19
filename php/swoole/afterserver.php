@@ -38,7 +38,8 @@ class Server {
     }
 
     public function onConnect($serv, $fd, $from_id) {
-        echo "Client {$fd} connect\n";
+        echo "Client {$fd} connect\n";$this->serv->send($param['fd'], $param['msg']);
+        $this->serv->send($fd, 'hello');
     }
 
     public function onReceive(swoole_server $serv, $fd, $from_id, $data) {
