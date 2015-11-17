@@ -18,7 +18,7 @@ class Server {
     public function __construct() {
         $this->serv = new swoole_server("0.0.0.0", 9501);
         $this->serv->set(array(
-            'worker_num' => 8,
+            'worker_num' => 1,
             'daemonize' => false,
             'max_request' => 10000,
             'dispatch_mode' => 2,
@@ -38,7 +38,7 @@ class Server {
     }
 
     public function onConnect($serv, $fd, $from_id) {
-        echo "Client {$fd} connect\n";$this->serv->send($param['fd'], $param['msg']);
+        echo "Client {$fd} connect\n";
         $this->serv->send($fd, 'hello');
     }
 
@@ -49,7 +49,8 @@ class Server {
             'msg' => $data
         );
         $str = json_encode($param);
-        $serv->after(1000, array($this, 'onAfter'), $str);
+        $serv->after(5000, array($this, 'onAfter'), $str);
+        echo "end onreceive\n";
     }
 
     public function onClose($serv, $fd, $from_id) {
@@ -57,6 +58,7 @@ class Server {
     }
 
     public function onAfter($data) {
+        echo "onafter\n";
         $param = json_decode($data, true);
         $this->serv->send($param['fd'], $param['msg']);
     }

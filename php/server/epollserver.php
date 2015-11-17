@@ -47,12 +47,13 @@ function onReceive($socket, $flag, $args) {
         event_free($args['clientEvent']);
     } else {
         echo "new data arrives $socket\n";
-        for ($i = 0; $i < 10; $i++) {
-            sleep(1);
-            var_dump("sleep " . $socket);
-        }
+//        for ($i = 0; $i < 10; $i++) {
+//            sleep(1);
+//            var_dump("sleep " . $socket);
+//        }
         var_dump($flag);
         var_dump($data);
-        fwrite($socket, 'testdata');
+        fwrite($socket, "testdata\n");
     }
+//    sleep(5);
 }

@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="test">
+<head>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+    <script src="js/test.js"></script>
+</head>
+<body>
+<div ng-controller="MyController">
+    <input type="text" ng-model="person.name" placeholder="Enter your name" />
+    <h5>Hello {{ person.name }}</h5>
+    <div ng-controller="MyController">
+        <h5>{{ clock }}</h5>
+    </div>
+</div>
+
+<div ng-controller="DemoController">
+    <h4>The simplest adding machine ever</h4>
+    <button ng-click="add(1)" class="button">Add</button>
+    <button ng-click="subtract(1)" class="button">Subtract</button>
+    <h4>Current count: {{ counter }}</h4>
+
+    <ul>
+        <li ng-repeat="person in roommates">{{ person.name }}</li>
+    </ul>
+    <ul>
+        <li ng-repeat="(name, color) in people">{{ name }}'s favorite color is {{ color }}
+        </li>
+    </ul>
+</div>
+</body>
+</html> 

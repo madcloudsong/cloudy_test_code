@@ -20,12 +20,12 @@ class Server {
     public function __construct() {
         $this->serv = new swoole_server("0.0.0.0", 9501);
         $this->serv->set(array(
-            'worker_num' => 8,
+            'worker_num' => 1,
             'daemonize' => false,
             'max_request' => 10000,
             'dispatch_mode' => 2,
             'debug_mode' => 1,
-            'task_worker_num' => 8,
+            'task_worker_num' => 1,
         ));
 
         $this->serv->on('Start', array($this, 'onStart'));
@@ -63,7 +63,7 @@ class Server {
     }
 
     public function onTask($serv,$task_id,$from_id, $data) {
-        echo "This Task {$task_id} from Worker {$from_id}\n";
+        echo "{$serv->worker_id} This Task {$task_id} from Worker {$from_id}\n";
         echo "Data: {$data}\n";
         for($i = 0 ; $i < 10 ; $i ++ ) {
             sleep(1);
@@ -75,7 +75,7 @@ class Server {
     }
 
     public function onFinish($serv,$task_id, $data) {
-        echo "Task {$task_id} finish\n";
+        echo "{$serv->worker_id}  Task {$task_id} finish\n";
         echo "Result: {$data}\n";
     }
 }
